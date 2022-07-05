@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import "./App.css";
+import "./App.scss";
 import { NavBar } from "./components/NavBar";
 import { Routes } from "./components/Routes";
 
