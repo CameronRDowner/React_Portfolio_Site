@@ -1,20 +1,35 @@
 import DownloadIcon from "@mui/icons-material/Download";
 import { AppBar, Button, Link, Stack, Typography } from "@mui/material";
-import React, { FC } from "react";
+import React, { CSSProperties, FC } from "react";
 
 import { pxToRem } from "../styles/theme";
 
+const staticNavBarStyles: CSSProperties = {
+  borderTopRightRadius: "1.3rem",
+  borderTopLeftRadius: "1.3rem",
+};
+
 export const NavBar: FC = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={staticNavBarStyles}>
       <Stack
         flexDirection="row"
         justifyContent="space-between"
         alignItems="center"
       >
-        <Typography>CD</Typography>
+        <Typography
+          sx={{
+            fontSize: "1.25rem",
+            fontStyle: "italic",
+            fontWeight: "900",
+            cursor: "pointer",
+            fontFamily: "Montserrat",
+          }}
+        >
+          CD
+        </Typography>
         <Stack flexDirection="row" spacing={1} alignItems="center">
-          <nav>
+          <nav style={{ marginRight: pxToRem(40) }}>
             <ul
               style={{
                 display: "flex",
@@ -47,12 +62,12 @@ export const NavBar: FC = () => {
           </nav>
           <Button
             variant="outlined"
-            color="secondary"
             size="small"
-            style={{ marginLeft: pxToRem(40) }}
+            color="secondary"
+            style={{ margin: 0 }}
           >
             Resume
-            <DownloadIcon color="secondary" />
+            <DownloadIcon style={{ height: "0.7em", width: "0.7em" }} />
           </Button>
         </Stack>
       </Stack>
